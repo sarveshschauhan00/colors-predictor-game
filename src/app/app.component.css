@@ -1,0 +1,58 @@
+/* table {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+} */
+  
+/* Add this CSS to your component's stylesheet or your global styles.css file */
+
+/* .mat-cell,
+.mat-header-cell {
+  text-align: center;
+  justify-content: center;
+} */
+/* Add this CSS to your component's stylesheet or your global styles.css file */
+
+/* .mat-row,
+.mat-header-row {
+  align-items: center;
+  justify-content: center;
+} */
+
+.green {
+    background-color: green;
+    color: white;
+}
+
+.red {
+    background-color: red;
+    color: white;
+}
+
+.btn {
+    width: 95%;
+}
+
+.diagonal-green-button {
+    position: relative;
+    background: linear-gradient(to bottom right, violet 50%, green 50%);
+    border: none;
+    color: white; /* Set the text color */
+    font-size: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    /* transition: background 0.3s ease; */
+  }
+
+  .diagonal-red-button {
+    position: relative;
+    background: linear-gradient(to bottom right, violet 50%, red 50%);
+    border: none;
+    color: white; /* Set the text color */
+    font-size: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    /* transition: background 0.3s ease; */
+  }
