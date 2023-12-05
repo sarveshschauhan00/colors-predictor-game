@@ -2,6 +2,8 @@
 
 .select-options-row {
     display: flex;
+    width: fit-content;
+    gap: 4px;
   }
   
   .select-option {
@@ -16,5 +18,23 @@
   
   .select-option.selected {
     background-color: grey;
+    color: white;
   }
   
+
+    /* Add this to your styles.css (or your component-specific CSS file) */
+.custom-button {
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 20px; /* Add padding to improve button appearance */
+    cursor: pointer; /* Set cursor to pointer for better usability */
+    appearance: none; /* Reset appearance to none to preserve default styles */
+    background-color: #d0d0d0; /* Add your preferred background color */
+    color: black; /* Add your preferred text color */
+  }
+  .custom-button:hover {
+    background-color: #bfbfbf; /* Change color on hover if desired */
+  }
+  .custom-button:active {
+    background-color: #919191; /* Change color when the button is clicked */
+  }

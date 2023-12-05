@@ -14,26 +14,26 @@
   </div>
 
   <div style="display: flex; width: 100%; height: 40px; justify-content: space-around; margin: 16px;">
-    <button style="background-color: green; color: white; border: 0; border-radius: 4px; ">Join Green</button>
-    <button style="background-color: violet; color: white; border: 0; border-radius: 4px; ">Join Violet</button>
-    <button style="background-color: red; color: white; border: 0; border-radius: 4px; ">Join Red</button>
+    <button style="background-color: green; color: white; border: 0; border-radius: 4px;" (click)="showMakeBetDialog(10)">Join Green</button>
+    <button style="background-color: violet; color: white; border: 0; border-radius: 4px;" (click)="showMakeBetDialog(11)">Join Violet</button>
+    <button style="background-color: red; color: white; border: 0; border-radius: 4px;" (click)="showMakeBetDialog(12)">Join Red</button>
   </div>
 
   <table >
     <tbody>
       <tr>
-        <td><button class="btn green diagonal-green-button">0</button></td>
-        <td><button class="btn red">1</button></td>
-        <td><button class="btn green">2</button></td>
-        <td><button class="btn red">3</button></td>
-        <td><button class="btn green">4</button></td>
+        <td><button class="btn green diagonal-green-button" (click)="showMakeBetDialog(0)">0</button></td>
+        <td><button class="btn red" (click)="showMakeBetDialog(1)">1</button></td>
+        <td><button class="btn green" (click)="showMakeBetDialog(2)">2</button></td>
+        <td><button class="btn red" (click)="showMakeBetDialog(3)">3</button></td>
+        <td><button class="btn green" (click)="showMakeBetDialog(4)">4</button></td>
       </tr>
       <tr>
-        <td><button class="btn red diagonal-red-button">5</button></td>
-        <td><button class="btn green">6</button></td>
-        <td><button class="btn red">7</button></td>
-        <td><button class="btn green">8</button></td>
-        <td><button class="btn red">9</button></td>
+        <td><button class="btn red diagonal-red-button" (click)="showMakeBetDialog(5)">5</button></td>
+        <td><button class="btn green" (click)="showMakeBetDialog(6)">6</button></td>
+        <td><button class="btn red" (click)="showMakeBetDialog(7)">7</button></td>
+        <td><button class="btn green" (click)="showMakeBetDialog(8)">8</button></td>
+        <td><button class="btn red" (click)="showMakeBetDialog(9)">9</button></td>
       </tr>
     </tbody>
   </table>

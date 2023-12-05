@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-make-bet-dialog',
@@ -13,13 +14,66 @@ import { CommonModule } from '@angular/common';
 export class MakeBetDialogComponent {
   options: number[] = [10, 50, 100, 500, 1000, 10000];
   selectedOption: number = 10;
+  contract_count: number = 1;
+  totalAmount: number = 10;
 
   selectOption(option: number): void {
     this.selectedOption = option;
+    this.totalAmount = this.contract_count * this.selectedOption;
   }
-  value: number = 2;
+  value: any = 2;
   constructor(
-    // public dialogRef: MatDialogRef<MakeBetDialogComponent>,
-    private router: Router
-  ) {}
+    public dialogRef: MatDialogRef<MakeBetDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: { num: number }, // Inject the data
+    private router: Router,
+    private http: HttpClient,
+  ) {
+    if (this.data.num == 10){
+      this.value = "GREEN";
+    } else if (this.data.num == 11){
+      this.value = "VIOLET";
+    } else if (this.data.num == 12){
+      this.value = "RED";
+    } else {
+      this.value = this.data.num;
+    }
+  }
+
+
+  increaseCount() {
+    this.contract_count += 1;
+    this.totalAmount = this.contract_count * this.selectedOption;
+  }
+  decreaseCount() {
+    this.contract_count -= 1;
+    this.totalAmount = this.contract_count * this.selectedOption;
+  }
+
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
+
+  async confirmRequest(user: string, contract_count: number, contract_money: number, bet_on: number){
+    const payload = {
+      "user" : user,
+      "contract_count" : contract_count,
+      "contract_money" : contract_money,
+      "bet_on": bet_on
+    };
+    console.log("payload", payload)
+    try {
+      const response = await this.http
+        .post<any>("http_url", payload, this.httpOptions)
+        .toPromise();
+    } catch (error) {
+      console.error(
+        'Error occurred while making predict API request:',
+        error
+      );
+    }
+  }
+
 }

@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
-import {MatTableModule} from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -29,6 +29,7 @@ import { TempComponent } from './temp/temp.component';
 import { MakeBetDialogComponent } from './make-bet-dialog/make-bet-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { CommonModule } from '@angular/common';
     }),
     AngularFireAuthModule,
     LogoutDialogComponent,
-    MakeBetDialogComponent
+    MakeBetDialogComponent,
+    HttpClientModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
