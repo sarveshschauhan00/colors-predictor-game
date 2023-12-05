@@ -1,0 +1,23 @@
+.active-link {
+    font-weight: bold;
+    text-decoration: underline;
+    color: blue;
+    background-color: lightgray;
+  }
+
+  /* Add this to your styles.css (or your component-specific CSS file) */
+.custom-button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 20px; /* Add padding to improve button appearance */
+  cursor: pointer; /* Set cursor to pointer for better usability */
+  appearance: none; /* Reset appearance to none to preserve default styles */
+  background-color: #ffffff; /* Add your preferred background color */
+  color: black; /* Add your preferred text color */
+}
+.custom-button:hover {
+  background-color: #ebebeb; /* Change color on hover if desired */
+}
+.custom-button:active {
+  background-color: #aeaeae; /* Change color when the button is clicked */
+}

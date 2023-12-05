@@ -1,0 +1,20 @@
+/* select-options.component.css */
+
+.select-options-row {
+    display: flex;
+  }
+  
+  .select-option {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .select-option.selected {
+    background-color: grey;
+  }
+  

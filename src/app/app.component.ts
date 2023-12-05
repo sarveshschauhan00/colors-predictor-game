@@ -28,6 +28,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class AppComponent {
   title = 'colors-predictor';
+  loading: boolean = true;
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 }

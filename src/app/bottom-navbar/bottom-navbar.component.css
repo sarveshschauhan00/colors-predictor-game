@@ -1,4 +1,5 @@
 .bottom-navbar {
+    z-index: 999;
     position: fixed;
     bottom: 0;
     display: flex;
@@ -10,3 +11,12 @@
     box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1); /* Adjust the shadow color and size as needed */
   }
   
+
+.tab {
+    text-decoration: none;
+    /* color: white; */
+  }
+  
+.active-link {
+    font-weight: bold;
+  }
