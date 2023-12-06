@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MakeBetDialogComponent } from 'src/app/make-bet-dialog/make-bet-dialog.component';
+import { SharedStateService } from 'src/app/services/shared-state.service';
 
 export interface PeriodicElement {
   price: number;
@@ -12,7 +13,7 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {period: 20230918479, price: 60056, num: 0, result: 'red'},
+  {period: 20230918479, price: 60056, num: 0, result: 'violet'},
   {period: 20230918478, price: 60056, num: 0, result: 'red'},
   {period: 20230918477, price: 60056, num: 0, result: 'green'},
   {period: 20230918476, price: 60056, num: 0, result: 'red'},
@@ -35,12 +36,12 @@ export class SapreComponent implements AfterViewInit {
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(public dialog: MatDialog){}
+  constructor(public dialog: MatDialog, public sharedState: SharedStateService){}
 
-  showMakeBetDialog(value: number = 1) {
+  showMakeBetDialog(value: number) {
     const dialogRef = this.dialog.open(MakeBetDialogComponent, {
       width: 'auto',
-      data: { num: value }
+      data: { num: value, game: "sapre" }
     });
 
     dialogRef.afterClosed().subscribe((result) => {

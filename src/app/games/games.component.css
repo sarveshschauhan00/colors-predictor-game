@@ -2,7 +2,7 @@
     font-weight: bold;
     text-decoration: underline;
     color: blue;
-    background-color: lightgray;
+    background-color: rgb(215, 214, 214);
   }
 
   /* Add this to your styles.css (or your component-specific CSS file) */

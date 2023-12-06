@@ -1,6 +1,8 @@
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { MakeBetDialogComponent } from 'src/app/make-bet-dialog/make-bet-dialog.component';
 
 
 export interface PeriodicElement {
@@ -31,8 +33,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class BconeComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  constructor(public dialog: MatDialog){}
+
+  showMakeBetDialog(value: number) {
+    const dialogRef = this.dialog.open(MakeBetDialogComponent, {
+      width: 'auto',
+      data: { num: value, game: "bcone" }
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+    });
+  }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;

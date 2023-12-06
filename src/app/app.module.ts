@@ -30,6 +30,7 @@ import { MakeBetDialogComponent } from './make-bet-dialog/make-bet-dialog.compon
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     GamesComponent,
     ProfileComponent,
     TempComponent,
+    CountdownTimerComponent,
   ],
   imports: [
     CommonModule,

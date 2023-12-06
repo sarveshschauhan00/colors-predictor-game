@@ -24,7 +24,7 @@ export class MakeBetDialogComponent {
   value: any = 2;
   constructor(
     public dialogRef: MatDialogRef<MakeBetDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { num: number }, // Inject the data
+    @Inject(MAT_DIALOG_DATA) public data: { num: number, game: string }, // Inject the data
     private router: Router,
     private http: HttpClient,
   ) {
@@ -61,12 +61,13 @@ export class MakeBetDialogComponent {
       "user" : user,
       "contract_count" : contract_count,
       "contract_money" : contract_money,
-      "bet_on": bet_on
+      "bet_on": bet_on,
+      "game": this.data.game
     };
     console.log("payload", payload)
     try {
       const response = await this.http
-        .post<any>("http_url", payload, this.httpOptions)
+        .post<any>("http://127.0.0.1:5000/api/post_example", payload, this.httpOptions)
         .toPromise();
     } catch (error) {
       console.error(
