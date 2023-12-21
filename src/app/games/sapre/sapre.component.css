@@ -35,3 +35,8 @@
     outline: none;
     /* transition: background 0.3s ease; */
   }
+
+button:disabled {
+    background-color: grey;
+    color: black;
+}

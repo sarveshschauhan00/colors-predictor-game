@@ -1,0 +1,26 @@
+<div style="width: 100%; height: 40px; background-color: rgb(147, 222, 135); padding-inline: 32px; display: flex; align-items: center; justify-content: space-between;">
+    <div style="display: flex; align-items: center;">
+        <mat-icon style="font-size: xx-large; height: auto; width: auto;" (click)="goBack()">arrow_left</mat-icon>
+        <div style="font-weight: bold; margin-left: 12px;">Recharge</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+        <div style="font-weight: bold;">Balance: $0.0</div>
+        <mat-icon style="font-size: x-large; height: auto; width: auto;" routerLink="/login">book</mat-icon>
+    </div>
+</div>
+<div style="display: flex; flex-direction: column; justify-content: center; width: 100%;">
+    <div class="container">
+        <div class="input-container">
+            <span class="currency-symbol">💲</span>
+            <input type="text" placeholder="Enter Recharge Amount" [value]="value" #amount>
+          </div>
+        <div class="button-container">
+          <div class="round-button" (click)="changeAmount(200)">$ 200</div>
+          <div class="round-button" (click)="changeAmount(500)">$ 500</div>
+          <div class="round-button" (click)="changeAmount(1000)">$ 1000</div>
+          <div class="round-button" (click)="changeAmount(5000)">$ 5000</div>
+          <div class="round-button" (click)="changeAmount(50000)">$ 50000</div>
+        </div>
+        <button class="recharge-button" (click)="recharge('rishika', amount.value)">Recharge</button>
+      </div>
+</div>

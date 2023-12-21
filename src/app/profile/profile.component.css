@@ -1,0 +1,58 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .header {
+    display: flex;
+    background-color: yellow;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+    border-radius: 16px;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-id,
+  .mobile {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .balance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .available-balance,
+  .interest {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .available-balance {
+    color: #27ae60;
+  }
+  
+  .interest {
+    color: rgb(86, 159, 92);
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10
+  }

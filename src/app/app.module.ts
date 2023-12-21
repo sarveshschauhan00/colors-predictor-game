@@ -20,6 +20,8 @@ import { EmerdComponent } from './games/emerd/emerd.component';
 import { HomeComponent } from './home/home.component';
 import { GamesComponent } from './games/games.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth'
@@ -31,6 +33,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { RechargeComponent } from './recharge/recharge.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
+// import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -48,6 +54,8 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     ProfileComponent,
     TempComponent,
     CountdownTimerComponent,
+    RechargeComponent,
+    WithdrawComponent
   ],
   imports: [
     CommonModule,
@@ -55,6 +63,9 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatExpansionModule,
+    MatInputModule,
+    FormsModule,
     MatTableModule,
     MatTabsModule,
     MatProgressBarModule,
